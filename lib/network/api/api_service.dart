@@ -12,9 +12,6 @@ class ApiService {
 
   Map<String, dynamic> requestHeaders = {
     'Authorization': _apiKey,
-    'X-Ratelimit-Limit': 20000,
-    'X-Ratelimit-Remaining': 19684,
-    'X-Ratelimit-Reset': 1590529646
   };
 
   Future<PhotosModel?> getListPhotos(int limit, int offset) async {
