@@ -10,7 +10,12 @@ class ApiService {
   static const String _apiKey = '563492ad6f91700001000001768b3a098efb4912a758163e6ef35e51';
   final Dio _dio = Dio();
 
-  Map<String, String> requestHeaders = {'Authorization': _apiKey};
+  Map<String, dynamic> requestHeaders = {
+    'Authorization': _apiKey,
+    'X-Ratelimit-Limit': 20000,
+    'X-Ratelimit-Remaining': 19684,
+    'X-Ratelimit-Reset': 1590529646
+  };
 
   Future<PhotosModel?> getListPhotos(int limit, int offset) async {
     try {
